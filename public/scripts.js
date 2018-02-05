@@ -4,25 +4,43 @@ socket.on('event', function (frame) {
   handleFrame(frame);
 });
 
-function handleFrame({prop, type, time, at, from, duration, to}) {
+function handleFrame({time, at, ...opts}) {
   var delay = at - time;
   if (delay > 0) {
-    setPreview(prop, to);
+    //setPreview(prop, to);
     window.setTimeout(function () {
-      setProp(prop, to);
+      go(opts);
     }, delay);
   } else {
-    setProp(prop, to);
+    go(opts);
   }
 }
 
-function setProp(prop, colors) {
+function go ({type, ...opts}) {
+  switch (type) {
+    case 's': // set
+      setProp(opts);
+      break;
+    case 'f': // flash
+      flashProp(opts);
+      break;
+  }
+}
+
+function setProp ({prop, to}) {
   var $prop = $('#' + prop + ' li').each(function (i) {
-    $(this).add('span', this).css('background-color', '#' + colors[i])
+    $(this).add('span', this).css('background-color', '#' + to[i])
   });
 }
 
-function setPreview(prop, colors) {
+function flashProp({prop, from, duration, to}) {
+  setProp({prop, to: from});
+  setTimeout(function () {
+    setProp({prop, to});
+  }, duration);
+}
+
+function setPreview (prop, colors) {
   var $prop = $('#' + prop + ' li span').each(function (i) {
     $(this).css('background-color', '#' + colors[i])
   });
