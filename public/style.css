@@ -1,0 +1,72 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #333;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+}
+
+li {
+  margin: 1px;
+  padding: 0;
+  flex: 1 0 auto;
+  border: 1px solid #000;
+}
+
+#towers, #mallets {
+  margin: 40px 0;
+}
+
+#towers li, #mallets li {
+  position: relative;
+}
+
+#towers span, #mallets span {
+  position: absolute;
+  display: block;
+  width: 6px;
+  height: 6px;
+  right: 3px;
+  bottom: 3px;
+  border-radius: 50%;
+}
+
+#towers {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#towers ul {
+  flex-direction: column;
+  height: 200px;
+  width: 30px;
+}
+
+#towers li {
+  width: 100%;
+}
+
+#mallets {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#mallets > div {
+  margin: 0 10px;
+}
+
+#mallets ul {
+  width: 200px;
+  height: 30px;
+}
+
+#mallets li {
+  height: 100%;
+}

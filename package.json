@@ -1,0 +1,21 @@
+{
+  "name": "spark",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.6.0",
+    "midi": "^0.9.5",
+    "node-static": "^0.7.10",
+    "serialport": "^6.0.4",
+    "socket.io": "^2.0.4",
+    "tinycolor2": "^1.4.1",
+    "xbee-api": "^0.6.0"
+  }
+}
