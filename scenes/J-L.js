@@ -1,8 +1,11 @@
-const {set} = require('../lib/setters')
-    , {teal, lightTeal, red} = require('../lib/colors')
+const {set, flash} = require('../lib/setters')
+    , {teal, lightTeal, red, brightRed} = require('../lib/colors')
     , {t1, t2, t3, t4, t5, t6, m1, m2, m3, m4, m5, all, mallets, towers} = require('../lib/props')
     , delay = require('../lib/delay')
 ;
+
+
+const soloFlashSpeed = 225;
 
 
 
@@ -51,27 +54,65 @@ module.exports = {
 
   // jan
   'C7': [
-    set([m5], {to: red}),
+    flash([m5], {delay: soloFlashSpeed * 1, from: [brightRed, teal, teal, teal], duration: 100, to: [red, brightRed, teal, teal], resend: false}),
+    flash([m5], {delay: soloFlashSpeed * 2, from: [red, red, brightRed, teal],   duration: 100, to: [red, red, red, brightRed], resend: false}),
+    set([m5],   {delay: soloFlashSpeed * 3, to: red}),
+    flash([m2], {delay: soloFlashSpeed * 3, from: [brightRed, red, red, red], duration: 100, to: [red, brightRed, red, red], resend: false}),
+    flash([m2], {delay: soloFlashSpeed * 4, from: [red, red, brightRed, red], duration: 100, to: [red, red, red, brightRed], resend: false}),
+    set([m2],   {delay: soloFlashSpeed * 5, to: red}),
   ],
 
   // sarah
   'C#7': [
-    set([m4], {to: red}),
+    flash([m4], {delay: soloFlashSpeed * 1, from: [brightRed, teal, teal, teal], duration: 100, to: [red, brightRed, teal, teal], resend: false}),
+    flash([m4], {delay: soloFlashSpeed * 2, from: [red, red, brightRed, teal],   duration: 100, to: [red, red, red, brightRed], resend: false}),
+    set([m4],   {delay: soloFlashSpeed * 3, to: red}),
+    flash([m5], {delay: soloFlashSpeed * 3, from: [brightRed, red, red, red], duration: 100, to: [red, brightRed, red, red], resend: false}),
+    flash([m5], {delay: soloFlashSpeed * 4, from: [red, red, brightRed, red],   duration: 100, to: [red, red, red, brightRed], resend: false}),
+    set([m5],   {delay: soloFlashSpeed * 5, to: red}),
+    flash([m2], {delay: soloFlashSpeed * 5, from: [brightRed, red, red, red], duration: 100, to: [red, brightRed, red, red], resend: false}),
+    flash([m2], {delay: soloFlashSpeed * 6, from: [red, red, brightRed, red], duration: 100, to: [red, red, red, brightRed], resend: false}),
+    set([m2],   {delay: soloFlashSpeed * 7, to: red}),
   ],
 
   // jake
   'D7': [
-    set([m1], {to: red}),
+    flash([m1], {delay: soloFlashSpeed * 1,  from: [brightRed, teal, teal, teal], duration: 100, to: [red, brightRed, teal, teal], resend: false}),
+    flash([m1], {delay: soloFlashSpeed * 2,  from: [red, red, brightRed, teal],   duration: 100, to: [red, red, red, brightRed], resend: false}),
+    set([m1],   {delay: soloFlashSpeed * 3,  to: red}),
+    flash([m4], {delay: soloFlashSpeed * 3,  from: [brightRed, red, red, red], duration: 100, to: [red, brightRed, red, red], resend: false}),
+    flash([m4], {delay: soloFlashSpeed * 4,  from: [red, red, brightRed, red],   duration: 100, to: [red, red, red, brightRed], resend: false}),
+    set([m4],   {delay: soloFlashSpeed * 5,  to: red}),
+    flash([m5], {delay: soloFlashSpeed * 5,  from: [brightRed, red, red, red], duration: 100, to: [red, brightRed, red, red], resend: false}),
+    flash([m5], {delay: soloFlashSpeed * 6,  from: [red, red, brightRed, red],   duration: 100, to: [red, red, red, brightRed], resend: false}),
+    set([m5],   {delay: soloFlashSpeed * 7,  to: red}),
+    flash([m2], {delay: soloFlashSpeed * 7, from: [brightRed, red, red, red], duration: 100, to: [red, brightRed, red, red], resend: false}),
+    flash([m2], {delay: soloFlashSpeed * 8, from: [red, red, brightRed, red], duration: 100, to: [red, red, red, brightRed], resend: false}),
+    set([m2],   {delay: soloFlashSpeed * 9, to: red}),
   ],
 
   // paul
   'D#7': [
-    set([m3], {to: red}),
+    flash([m1], {delay: soloFlashSpeed * 1,  from: [brightRed, red, red, red], duration: 100, to: [red, brightRed, red, red], resend: false}),
+    flash([m1], {delay: soloFlashSpeed * 2,  from: [red, red, brightRed, red],   duration: 100, to: [red, red, red, brightRed], resend: false}),
+    set([m1],   {delay: soloFlashSpeed * 3,  to: red}),
+    flash([m3], {delay: soloFlashSpeed * 3,  from: [brightRed, teal, teal, teal], duration: 100, to: [red, brightRed, teal, teal], resend: false}),
+    flash([m3], {delay: soloFlashSpeed * 4,  from: [red, red, brightRed, teal],   duration: 100, to: [red, red, red, brightRed], resend: false}),
+    set([m3],   {delay: soloFlashSpeed * 5,  to: red}),
+    flash([m4], {delay: soloFlashSpeed * 5,  from: [brightRed, red, red, red], duration: 100, to: [red, brightRed, red, red], resend: false}),
+    flash([m4], {delay: soloFlashSpeed * 6,  from: [red, red, brightRed, red],   duration: 100, to: [red, red, red, brightRed], resend: false}),
+    set([m4],   {delay: soloFlashSpeed * 7,  to: red}),
+    flash([m5], {delay: soloFlashSpeed * 7, from: [brightRed, red, red, red], duration: 100, to: [red, brightRed, red, red], resend: false}),
+    flash([m5], {delay: soloFlashSpeed * 8, from: [red, red, brightRed, red],   duration: 100, to: [red, red, red, brightRed], resend: false}),
+    set([m5],   {delay: soloFlashSpeed * 9, to: red}),
+    flash([m2], {delay: soloFlashSpeed * 9, from: [brightRed, red, red, red], duration: 100, to: [red, brightRed, red, red], resend: false}),
+    flash([m2], {delay: soloFlashSpeed * 10, from: [red, red, brightRed, red], duration: 100, to: [red, red, red, brightRed], resend: false}),
+    set([m2],   {delay: soloFlashSpeed * 11, to: red}),
   ],
 
   // all
   'E7': [
-    set(all, {to: red}),
+    set([t4, t3, t5, t2, t6, t1], {to: red}),
   ],
 
 
