@@ -7,17 +7,8 @@ const {set, flash} = require('../lib/setters')
 
 
 function letterAPulses(wait) {
-  const length = 200;
-  const space = 60;
   return function () {
-    return [
-      flash([m3],     {delay: wait + space * 0, duration: length, from: teal, to: lightTeal}),
-      flash([t3, t4], {delay: wait + space * 1, duration: length, from: teal, to: lightTeal}),
-      flash([m2, m4], {delay: wait + space * 2, duration: length, from: teal, to: lightTeal}),
-      flash([t2, t5], {delay: wait + space * 3, duration: length, from: teal, to: lightTeal}),
-      flash([m1, m5], {delay: wait + space * 4, duration: length, from: teal, to: lightTeal}),
-      flash([t1, t6], {delay: wait + space * 5, duration: length, from: teal, to: lightTeal}),
-    ];
+    return flash(all, {delay: wait, duration: delay(90, 0.5), from: teal, to: lightTeal});
   }
 }
 
@@ -46,10 +37,10 @@ module.exports = {
   // m1 -> first hit
   'C#3': [
     flash([t1, t2],     {delay: delay(90, 4 + 0),    duration: delay(90, 0.5), from: teal, to: lightTeal}),
-    flash([t3, m1, m2], {delay: delay(90, 4 + 0.25), duration: delay(90, 0.5), from: teal, to: lightTeal}),
-    flash([t4, m3],     {delay: delay(90, 4 + 0.5),  duration: delay(90, 0.5), from: teal, to: lightTeal}),
-    flash([t5, m4],     {delay: delay(90, 4 + 0.75), duration: delay(90, 0.5), from: teal, to: lightTeal}),
-    flash([t6, m5],     {delay: delay(90, 4 + 1),    duration: delay(90, 0.5), from: teal, to: lightTeal}),
+    flash([m1, m2], {delay: delay(90, 4 + 0.25), duration: delay(90, 0.5), from: teal, to: lightTeal}),
+    flash([m3],     {delay: delay(90, 4 + 0.5),  duration: delay(90, 0.5), from: teal, to: lightTeal}),
+    flash([m4],     {delay: delay(90, 4 + 0.75), duration: delay(90, 0.5), from: teal, to: lightTeal}),
+    flash([m5],     {delay: delay(90, 4 + 1),    duration: delay(90, 0.5), from: teal, to: lightTeal}),
   ],
 
   // m2 -> nothing
@@ -58,32 +49,31 @@ module.exports = {
   // m3 -> second hit
   'D#3': [
     flash([t6, t5],     {delay: delay(90, 0.75 + 0),    duration: delay(90, 0.5), from: teal, to: lightTeal}),
-    flash([t4, m5, m4], {delay: delay(90, 0.75 + 0.25), duration: delay(90, 0.5), from: teal, to: lightTeal}),
-    flash([t3, m3],     {delay: delay(90, 0.75 + 0.5),  duration: delay(90, 0.5), from: teal, to: lightTeal}),
-    flash([t2, m2],     {delay: delay(90, 0.75 + 0.75), duration: delay(90, 0.5), from: teal, to: lightTeal}),
-    flash([t1, m1],     {delay: delay(90, 0.75 + 1),    duration: delay(90, 0.5), from: teal, to: lightTeal}),
+    flash([m5, m4], {delay: delay(90, 0.75 + 0.25), duration: delay(90, 0.5), from: teal, to: lightTeal}),
+    flash([m3],     {delay: delay(90, 0.75 + 0.5),  duration: delay(90, 0.5), from: teal, to: lightTeal}),
+    flash([m2],     {delay: delay(90, 0.75 + 0.75), duration: delay(90, 0.5), from: teal, to: lightTeal}),
+    flash([m1],     {delay: delay(90, 0.75 + 1),    duration: delay(90, 0.5), from: teal, to: lightTeal}),
   ],
 
   // m4 -> third hit
   'E3': [
     flash([t1, t2, t3],     {delay: delay(90, 0.75 + 0),    duration: delay(90, 0.5), from: teal, to: lightTeal}),
-    flash([t4, m1, m2, m3], {delay: delay(90, 0.75 + 0.25), duration: delay(90, 0.5), from: teal, to: lightTeal}),
-    flash([t5, m4],         {delay: delay(90, 0.75 + 0.5),  duration: delay(90, 0.5), from: teal, to: lightTeal}),
-    flash([t6, m5],         {delay: delay(90, 0.75 + 0.75), duration: delay(90, 0.5), from: teal, to: lightTeal}),
+    flash([m1, m2, m3], {delay: delay(90, 0.75 + 0.25), duration: delay(90, 0.5), from: teal, to: lightTeal}),
+    flash([m4],         {delay: delay(90, 0.75 + 0.5),  duration: delay(90, 0.5), from: teal, to: lightTeal}),
+    flash([m5],         {delay: delay(90, 0.75 + 0.75), duration: delay(90, 0.5), from: teal, to: lightTeal}),
   ],
 
   // m5 - > fourth hit and fith hit (all)
   'F3': [
     flash([t6, t5, t4],     {delay: delay(90, 0.75 + 0),    duration: delay(90, 0.5), from: teal, to: lightTeal}),
-    flash([t3, m5, m4, m3], {delay: delay(90, 0.75 + 0.25), duration: delay(90, 0.5), from: teal, to: lightTeal}),
-    flash([t2, m2],         {delay: delay(90, 0.75 + 0.5),  duration: delay(90, 0.5), from: teal, to: lightTeal}),
-    flash([t1, m1],         {delay: delay(90, 0.75 + 0.75), duration: delay(90, 0.5), from: teal, to: lightTeal}),
+    flash([m5, m4, m3], {delay: delay(90, 0.75 + 0.25), duration: delay(90, 0.5), from: teal, to: lightTeal}),
+    flash([m2],         {delay: delay(90, 0.75 + 0.5),  duration: delay(90, 0.5), from: teal, to: lightTeal}),
+    flash([m1],         {delay: delay(90, 0.75 + 0.75), duration: delay(90, 0.5), from: teal, to: lightTeal}),
   ],
 
   // m6-7 -> letter A first hit
   'F#3': [
-    set(all, {delay: delay(90, 5), to: lightTeal}),
-    letterAPulses(delay(90, 5))
+    flash(all, {delay: delay(90, 5), duration: delay(90, 0.5), from: teal, to: lightTeal}),
   ],
 
 
@@ -93,29 +83,29 @@ module.exports = {
   // ========
 
   // m8 -> nothing
-  'G3': [],
+  'G3': [
+    flash(all, {delay: delay(90, 3), duration: delay(90, 0.5), from: teal, to: lightTeal}),
+  ],
 
   // m9 -> nothing
-  'G#3': [],
+  'G#3': [
+    flash(all, {delay: delay(90, 3.75), duration: delay(90, 0.5), from: teal, to: lightTeal}),
+  ],
 
   // m10 -> second hit
-  'A3': [letterAPulses(delay(90, 0.75))],
+  'A3': [],
 
   // m11 -> nothhing
   'A#3': [],
 
   // m12 -> third hit
-  'B3': [
-    letterAPulses(delay(90, 1.5))
-  ],
+  'B3': [],
 
   // m13 -> nothing
   'C4': [],
 
   // m13 -> fourth hit
-  'C#4': [
-    letterAPulses(delay(90, 2.75))
-  ],
+  'C#4': [],
 
   // m15 -> nothing
   'D4': [],

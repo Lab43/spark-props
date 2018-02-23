@@ -21,36 +21,28 @@ module.exports = {
 
   // m27b2 (2 before D) -> letter D
   'C#5': [
-    set(mallets, {delay: delay(90, 2), to: [lightTeal, lightTeal, lightTeal, teal], resend: false}),
-    set(mallets, {delay: delay(90, 2.75), to: [lightTeal, teal, lightTeal, lightTeal], resend: false}),
-    set(mallets, {delay: delay(90, 3.5), to: [lightTeal, lightTeal, teal, lightTeal], resend: false}),
-    set(mallets, {delay: delay(90, 4.5), to: [teal, lightTeal, lightTeal, lightTeal], resend: false}),
+    flash(mallets, {delay: delay(90, 2), from: [lightTeal, lightTeal, lightTeal, teal], duration: delay(90, 0.75), to: [lightTeal, teal, lightTeal, lightTeal]}),
+    flash(mallets, {delay: delay(90, 3.5), from: [lightTeal, lightTeal, teal, lightTeal], duration: delay(90, 0.75), to: [teal, lightTeal, lightTeal, lightTeal]}),
     set(mallets, {delay: delay(90, 5), to: lightTeal}),
   ],
 
   // m30b2 (2 before E) -> letter E
   'D5': [
-    set(mallets, {delay: delay(90, 2), to: [teal, lightTeal, lightTeal, lightTeal], resend: false}),
-    set(mallets, {delay: delay(90, 2.75), to: [lightTeal, lightTeal, teal, lightTeal], resend: false}),
-    set(mallets, {delay: delay(90, 3.5), to: [lightTeal, teal, lightTeal, lightTeal], resend: false}),
-    set(mallets, {delay: delay(90, 4.5), to: [lightTeal, lightTeal, lightTeal, teal], resend: false}),
+    flash(mallets, {delay: delay(90, 2), from: [teal, lightTeal, lightTeal, lightTeal], duration: delay(90, 0.75), to: [lightTeal, lightTeal, teal, lightTeal]}),
+    flash(mallets, {delay: delay(90, 3.5), from: [lightTeal, teal, lightTeal, lightTeal], duration: delay(90, 0.75), to: [lightTeal, lightTeal, lightTeal, teal]}),
     set(mallets, {delay: delay(90, 5), to: lightTeal}),
   ],
 
   // m33 (2 before F) -> letter F
   'D#5': [
-    set(mallets, {delay: delay(90, 2), to: [lightTeal, lightTeal, lightTeal, teal], resend: false}),
-    set(mallets, {delay: delay(90, 3), to: [lightTeal, teal, lightTeal, lightTeal], resend: false}),
-    set(mallets, {delay: delay(90, 4), to: [lightTeal, lightTeal, teal, lightTeal], resend: false}),
-    set(mallets, {delay: delay(90, 5), to: [teal, lightTeal, lightTeal, lightTeal], resend: false}),
-    set(mallets, {delay: delay(90, 5.75), to: [lightTeal, lightTeal, lightTeal, teal], resend: false}),
-    set(mallets, {delay: delay(90, 6.5), to: [lightTeal, teal, lightTeal, lightTeal], resend: false}),
-    set(mallets, {delay: delay(90, 7.25), to: [lightTeal, lightTeal, teal, lightTeal], resend: false}),
-    set(all, {delay: delay(90, 8), to: teal, resend: false}),
-    set(all, {delay: delay(90, 8.75), to: lightTeal, resend: false}),
-    set(all, {delay: delay(90, 9.5), to: teal, resend: false}),
-    set(all, {delay: delay(90, 10.25), to: lightTeal, resend: false}),
-    set(all, {delay: delay(90, 11), to: gentleGreen}),
+    flash(mallets, {delay: delay(90, 2), from: [lightTeal, lightTeal, lightTeal, teal], duration: delay(90, 1), to: [lightTeal, teal, lightTeal, lightTeal]}),
+    flash(mallets, {delay: delay(90, 4), from: [lightTeal, lightTeal, teal, lightTeal], duration: delay(90, 1), to: [teal, lightTeal, lightTeal, lightTeal]}),
+    flash(mallets, {delay: delay(90, 5.75), from: [lightTeal, lightTeal, lightTeal, teal], duration: delay(90, 0.75), to: [lightTeal, teal, lightTeal, lightTeal]}),
+    set(mallets, {delay: delay(90, 7.25), to: [lightTeal, lightTeal, teal, lightTeal]}),
+    flash(all, {delay: delay(90, 8), from: teal, duration: delay(90, 0.75), to: lightTeal}),
+    flash(all, {delay: delay(90, 9.5), from: teal, duration: delay(90, 0.75), to: lightTeal}),
+    set([t4, t5, t6, m3, m4, m5], {delay: delay(90, 11),   to: off}),
+    set([t1, t2, t3, m1, m2],     {delay: delay(90, 11), to: gentleGreen}),
   ],
 
 
@@ -61,22 +53,12 @@ module.exports = {
 
   // m38 (4 after G) -> bass feature
   'E5': [
-    flash([m5],   {delay: delay(90, 0.5),  from: [gentleGreen, gentleGreen, gentleGreen, teal], duration: delay(90, 0.125), to: [gentleGreen, gentleGreen, teal, lightTeal], resend: false}),
-    flash([m5],   {delay: delay(90, 0.75), from: [gentleGreen, teal, lightTeal, lightTeal],     duration: delay(90, 0.125), to: [teal, lightTeal, lightTeal, lightTeal], resend: false}),
-    set([m5, t6], {delay: delay(90, 1),    to: lightTeal}),
-    flash([m4],   {delay: delay(90, 1.25), from: [gentleGreen, gentleGreen, gentleGreen, teal], duration: delay(90, 0.125), to: [gentleGreen, gentleGreen, teal, lightTeal], resend: false}),
-    flash([m4],   {delay: delay(90, 1.5),  from: [gentleGreen, teal, lightTeal, lightTeal],     duration: delay(90, 0.125), to: [teal, lightTeal, lightTeal, lightTeal], resend: false}),
-    set([m4, t5], {delay: delay(90, 1.75), to: lightTeal}),
-    flash([m3],   {delay: delay(90, 2),    from: [gentleGreen, gentleGreen, gentleGreen, teal], duration: delay(90, 0.125), to: [gentleGreen, gentleGreen, teal, lightTeal], resend: false}),
-    flash([m3],   {delay: delay(90, 2.25), from: [gentleGreen, teal, lightTeal, lightTeal],     duration: delay(90, 0.125), to: [teal, lightTeal, lightTeal, lightTeal], resend: false}),
-    set([m3, t4], {delay: delay(90, 2.5),  to: lightTeal}),
-    set([t1, t2, t3, m1, m2], {delay: delay(90, 2.5), to: teal}),
   ],
 
   // m42 (4 before H) -> snare/marimba feature
   'F5': [
     set([t4, t5, t6, m3, m4, m5], {delay: delay(90, 2), to: teal}),
-    set([t1, t2, t3, m1, m2], {delay: delay(90, 4), to: lightTeal}),
+    set([t1, t2, t3, m1, m2], {delay: delay(90, 4), to: off}),
   ],
 
   // m50 (4 before I) -> Letter I

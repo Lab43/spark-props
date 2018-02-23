@@ -37,8 +37,8 @@ const byte l2[] = {10, 9, 11};
 const byte off[] = {0, 0, 0};
 const byte teal[] = {0, 255, 170};
 const byte lightTeal[] = {0, 17, 85};
-const byte red[] = {255, 0, 0};
-const byte brightRed[] = {255, 0, 85};
+const byte red[] = {255, 0, 85};
+const byte brightRed[] = {255, 255, 255};
 
 
 void setLight(const byte light[], const byte color[]) {
@@ -125,6 +125,9 @@ void loop() {
   if (backButton.pushed()) {
     firstTrigger = false;
     preset = (preset - 1) % (presetCount + 1);
+    if (preset == 255) { // -1 will be 255, because it rolls over
+      preset = presetCount;
+    }
     setPresetIndicator(preset);
   }
   p = max(analogRead(p1), analogRead(p2));

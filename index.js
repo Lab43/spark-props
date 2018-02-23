@@ -32,7 +32,9 @@ const server = require('http').createServer(function (request, response) {
 const tests = require('./scenes/tests')
     , zero_B = require('./scenes/0-B')
     , C_I = require('./scenes/C-I')
-    , J_L = require('./scenes/J-L')
+    , J_O = require('./scenes/J-O')
+    , P_V = require('./scenes/P-V')
+    , W_End = require('./scenes/w-End')
 ;
 
 const input = new midi.input();
@@ -78,7 +80,13 @@ input.on('message', function (deltaTime, message) {
       triggerScene(C_I[note]);
       break;
     case 4:
-      triggerScene(J_L[note]);
+      triggerScene(J_O[note]);
+      break;
+    case 5:
+      triggerScene(P_V[note]);
+      break;
+    case 6:
+      triggerScene(W_End[note]);
       break;
     default:
       console.log(`No scene set for channel ${channel}`);
